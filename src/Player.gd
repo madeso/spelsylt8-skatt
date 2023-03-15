@@ -1,10 +1,16 @@
 extends KinematicBody2D
 
 const GRAVITY = 200
-const MIN_VELY = 300
-const RUN_SPEED = 50
+const MAX_VEL_DOWN = 300
 const JUMP_POWER = 100
 
+const RUN_SPEED = 80
+const RUN_GROUND_ACC = 200
+const RUN_AIR_ACC = 100
+const GROUND_DEACC = 200
+const AIR_DEACC = 25
+
+var dx = 0
 var dy = 0
 var air_timer = 0
 
@@ -16,7 +22,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt):
 	dy = dy + GRAVITY * dt
-	dy = min(dy, MIN_VELY)
+	dy = min(dy, MAX_VEL_DOWN)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		dy = -JUMP_POWER
@@ -32,8 +38,21 @@ func _process(dt):
 		moved = true
 		$Sprite.flip_h = false
 	
-	var dx = mx * dt * RUN_SPEED
-	if move_and_collide(Vector2(dx, 0)):
+	if moved:
+		var acc = RUN_AIR_ACC
+		if air_timer < 0.1:
+			acc = RUN_GROUND_ACC
+		dx = clamp(dx + mx * dt * acc, -RUN_SPEED, RUN_SPEED)
+		
+	else:
+		var last_sign = sign(dx)
+		var deacc = AIR_DEACC
+		if air_timer < 0.1:
+			deacc = GROUND_DEACC
+		dx -= sign(dx) * dt * deacc
+		if sign(dx) != last_sign:
+			dx = 0
+	if move_and_collide(Vector2(dx * dt, 0)):
 		dx = 0
 		moved = false
 	
@@ -43,7 +62,7 @@ func _process(dt):
 		air_timer = 0
 		
 	# animate
-	print(dy)
+	print(dx)
 	if air_timer < 0.1:
 		if moved:
 			$Sprite.animation = "run"

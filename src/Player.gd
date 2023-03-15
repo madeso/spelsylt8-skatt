@@ -6,10 +6,13 @@ const JUMP_POWER = 100
 const JUMP_TIMER = 0.35
 const JUMP_BUFFER = 0.25
 
+const WALL_JUMP_HOR = 50
+const WALL_JUMP_POWER = 150
+
 const RUN_SPEED = 80
-const RUN_GROUND_ACC = 200
+const RUN_GROUND_ACC = 250
 const RUN_AIR_ACC = 100
-const GROUND_DEACC = 200
+const GROUND_DEACC = 250
 const AIR_DEACC = 25
 
 var dx = 0
@@ -17,6 +20,7 @@ var dy = 0
 var air_timer = 0
 var jump_timer = -1
 var jump_buffer = -1
+var wall_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,26 +29,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt):
-	dy = dy + GRAVITY * dt
-	dy = min(dy, MAX_VEL_DOWN)
-	
-	if jump_buffer >= 0:
-		jump_buffer -= dt
-	
-	if Input.is_action_just_pressed("ui_up"):
-		jump_buffer = JUMP_BUFFER
-	
-	if jump_buffer > 0 and air_timer < 0.1:
-		jump_timer = JUMP_TIMER
-		dy = -JUMP_POWER
-		jump_buffer = -1
-	
-	if Input.is_action_pressed("ui_up") and jump_timer > 0.0:
-		dy = -JUMP_POWER
-		jump_timer -= dt
-	else:
-		jump_timer = -1
-	
+	# ---------------------------------------------------------------------------------------------
+	# horizontal movmeent
 	var mx = 0
 	var moved = false
 	if Input.is_action_pressed("ui_left"):
@@ -61,7 +47,6 @@ func _process(dt):
 		if air_timer < 0.1:
 			acc = RUN_GROUND_ACC
 		dx = clamp(dx + mx * dt * acc, -RUN_SPEED, RUN_SPEED)
-		
 	else:
 		var last_sign = sign(dx)
 		var deacc = AIR_DEACC
@@ -70,15 +55,51 @@ func _process(dt):
 		dx -= sign(dx) * dt * deacc
 		if sign(dx) != last_sign:
 			dx = 0
+	if wall_timer < 10:
+		wall_timer += dt
 	if move_and_collide(Vector2(dx * dt, 0)):
 		dx = 0
 		moved = false
+		wall_timer = 0
+	
+	
+	# ---------------------------------------------------------------------------------------------
+	# vertical movment
+	dy = dy + GRAVITY * dt
+	dy = min(dy, MAX_VEL_DOWN)
+	
+	if jump_buffer >= 0:
+		jump_buffer -= dt
+	
+	if Input.is_action_just_pressed("ui_up"):
+		jump_buffer = JUMP_BUFFER
+	
+	if jump_buffer > 0:
+		if air_timer < 0.1:
+			jump_timer = JUMP_TIMER
+			dy = -JUMP_POWER
+			jump_buffer = -1
+		elif wall_timer < 0.1 and moved:
+			# wall jump
+			wall_timer = 10.0
+			jump_timer = 0
+			dx = -WALL_JUMP_HOR * mx
+			dy = -WALL_JUMP_POWER
+			jump_buffer = -1
+	
+	if Input.is_action_pressed("ui_up") and jump_timer > 0.0:
+		dy = -JUMP_POWER
+		jump_timer -= dt
+	else:
+		jump_timer = -1
+	
 	
 	air_timer += dt
 	if move_and_collide(Vector2(0, dy * dt)):
 		dy = 0
 		air_timer = 0
 		
+	# ---------------------------------------------------------------------------------------------
 	# animate
 	# print(jump_buffer)
 	if air_timer < 0.1:

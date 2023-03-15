@@ -4,6 +4,7 @@ const GRAVITY = 300
 const MAX_VEL_DOWN = 300
 const JUMP_POWER = 100
 const JUMP_TIMER = 0.35
+const JUMP_BUFFER = 0.25
 
 const RUN_SPEED = 80
 const RUN_GROUND_ACC = 200
@@ -15,6 +16,7 @@ var dx = 0
 var dy = 0
 var air_timer = 0
 var jump_timer = -1
+var jump_buffer = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,8 +28,16 @@ func _process(dt):
 	dy = dy + GRAVITY * dt
 	dy = min(dy, MAX_VEL_DOWN)
 	
-	if Input.is_action_just_pressed("ui_up") and air_timer < 0.1:
+	if jump_buffer >= 0:
+		jump_buffer -= dt
+	
+	if Input.is_action_just_pressed("ui_up"):
+		jump_buffer = JUMP_BUFFER
+	
+	if jump_buffer > 0 and air_timer < 0.1:
 		jump_timer = JUMP_TIMER
+		dy = -JUMP_POWER
+		jump_buffer = -1
 	
 	if Input.is_action_pressed("ui_up") and jump_timer > 0.0:
 		dy = -JUMP_POWER
@@ -70,7 +80,7 @@ func _process(dt):
 		air_timer = 0
 		
 	# animate
-	print(dx)
+	# print(jump_buffer)
 	if air_timer < 0.1:
 		if moved:
 			$Sprite.animation = "run"

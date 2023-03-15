@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-const GRAVITY = 200
+const GRAVITY = 300
 const MAX_VEL_DOWN = 300
 const JUMP_POWER = 100
+const JUMP_TIMER = 0.35
 
 const RUN_SPEED = 80
 const RUN_GROUND_ACC = 200
@@ -13,6 +14,7 @@ const AIR_DEACC = 25
 var dx = 0
 var dy = 0
 var air_timer = 0
+var jump_timer = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,8 +26,14 @@ func _process(dt):
 	dy = dy + GRAVITY * dt
 	dy = min(dy, MAX_VEL_DOWN)
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and air_timer < 0.1:
+		jump_timer = JUMP_TIMER
+	
+	if Input.is_action_pressed("ui_up") and jump_timer > 0.0:
 		dy = -JUMP_POWER
+		jump_timer -= dt
+	else:
+		jump_timer = -1
 	
 	var mx = 0
 	var moved = false

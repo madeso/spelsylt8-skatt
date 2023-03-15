@@ -31,7 +31,7 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
+"loop": false,
 "name": "jump",
 "speed": 10.0
 }, {
@@ -62,7 +62,7 @@ current = true
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

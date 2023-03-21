@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://palm-tree-island-tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" type="Texture" id=2]
@@ -17,9 +17,49 @@
 [ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png" type="Texture" id=15]
 [ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png" type="Texture" id=16]
 [ext_resource path="res://Player.gd" type="Script" id=17]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 02.png" type="Texture" id=18]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 03.png" type="Texture" id=19]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 03.png" type="Texture" id=20]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 01.png" type="Texture" id=21]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/15-Attack 1/Attack 1 02.png" type="Texture" id=22]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/15-Attack 1/Attack 1 03.png" type="Texture" id=23]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 01.png" type="Texture" id=24]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 02.png" type="Texture" id=25]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/17-Attack 3/Attack 3 03.png" type="Texture" id=26]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/17-Attack 3/Attack 3 02.png" type="Texture" id=27]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/15-Attack 1/Attack 1 01.png" type="Texture" id=28]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 03.png" type="Texture" id=29]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 01.png" type="Texture" id=30]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 02.png" type="Texture" id=31]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/17-Attack 3/Attack 3 01.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "air_attack_1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "air_attack_2",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "attack_1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "attack_2",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 27 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "attack_3",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "fall",
@@ -61,8 +101,8 @@ current = true
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
-animation = "idle"
-frame = 3
+animation = "air_attack_1"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

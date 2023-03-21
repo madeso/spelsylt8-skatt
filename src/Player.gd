@@ -21,14 +21,49 @@ var air_timer = 0
 var jump_timer = -1
 var jump_buffer = -1
 var wall_timer = 0
+var alive = true
+var death_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
+func collect_coin():
+	print("got some coin")
+
+func kill():
+	if alive:
+		print("player was killed by danger")
+		alive = false
+		dy = -JUMP_POWER * 1.25
+		air_timer = 1
+
+func update_dead(dt):
+	death_timer += dt
+	dy = dy + GRAVITY * dt
+	dy = min(dy, MAX_VEL_DOWN)
+	air_timer += dt
+	if move_and_collide(Vector2(0, dy * dt)):
+		dy = 0
+		air_timer = 0
+		
+	if death_timer > 0.25:
+		death_timer = 11
+		if Input.is_action_just_pressed("ui_accept"):
+			get_tree().reload_current_scene()
+			
+	
+	if air_timer < 0.1:
+		change_animation("dead_ground")
+	else:
+		change_animation("dead_hit")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt):
+	if alive == false:
+		update_dead(dt)
+		return
 	# ---------------------------------------------------------------------------------------------
 	# horizontal movmeent
 	var mx = 0

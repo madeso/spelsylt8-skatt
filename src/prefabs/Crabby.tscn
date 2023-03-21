@@ -69,12 +69,13 @@ animations = [ {
 extents = Vector2( 9, 7.5 )
 
 [node name="Crabby" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 31 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

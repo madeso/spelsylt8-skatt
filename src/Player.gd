@@ -102,13 +102,19 @@ func _process(dt):
 	# ---------------------------------------------------------------------------------------------
 	# animate
 	# print(jump_buffer)
+	# print(dx)
 	if air_timer < 0.1:
-		if moved:
-			$Sprite.animation = "run"
+		if abs(dx) > 6:
+			change_animation("run")
 		else:
-			$Sprite.animation = "idle"
+			change_animation("idle")
 	else:
 		if dy > 0:
-			$Sprite.animation = "fall"
+			change_animation("fall")
 		else:
-			$Sprite.animation = "jump"
+			change_animation("jump")
+
+func change_animation(name):
+	# if $Sprite.animation != name:
+	# 	print("changing animation to ", name)
+	$Sprite.animation = name

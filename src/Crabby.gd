@@ -36,6 +36,7 @@ func _process(dt):
 		if switch_state:
 			state = "walk"
 			
-	
-		
-	
+
+func _on_HurtBox_body_entered(body):
+	if body.name == "Player":
+		body.kill()

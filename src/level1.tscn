@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://palm-tree-island-tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/GoldCoin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/Crabby.tscn" type="PackedScene" id=4]
 [ext_resource path="res://prefabs/Spikes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/CoinEffect.tscn" type="PackedScene" id=6]
 
 [node name="root" type="Node2D"]
 
@@ -18,7 +19,7 @@ tile_data = PoolIntArray( -131080, 2, 0, -131079, 2, 1, -131078, 2, 1, -131077, 
 position = Vector2( -23, 53 )
 
 [node name="GoldCoin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 395, 337 )
+position = Vector2( 59, 142 )
 
 [node name="Spikes" parent="." instance=ExtResource( 5 )]
 position = Vector2( 144, 240 )
@@ -28,3 +29,5 @@ position = Vector2( 177, 240 )
 
 [node name="Crabby" parent="." instance=ExtResource( 4 )]
 position = Vector2( 497, 526 )
+
+[node name="CoinEffect" parent="." instance=ExtResource( 6 )]

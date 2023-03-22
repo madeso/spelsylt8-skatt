@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://CoinEffect.gd" type="Script" id=1]
+[ext_resource path="res://assets/Pirate Treasure/Coin Effect/01.png" type="Texture" id=2]
+[ext_resource path="res://assets/Pirate Treasure/Coin Effect/02.png" type="Texture" id=3]
+[ext_resource path="res://assets/Pirate Treasure/Coin Effect/03.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="CoinEffect" type="AnimatedSprite"]
+z_index = 15
+frames = SubResource( 1 )
+frame = 2
+playing = true
+script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_CoinEffect_animation_finished"]

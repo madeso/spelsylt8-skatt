@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://palm-tree-island-tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://prefabs/Chest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://prefabs/Key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://prefabs/KeyEffect.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefabs/Treasure.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/TreasureEffect.tscn" type="PackedScene" id=11]
 
 [node name="root" type="Node2D"]
 
@@ -22,7 +24,7 @@ tile_data = PoolIntArray( -131080, 2, 0, -131079, 2, 1, -131078, 2, 1, -131077, 
 position = Vector2( -23, 53 )
 
 [node name="Chest" parent="." instance=ExtResource( 7 )]
-position = Vector2( 108, 208 )
+position = Vector2( 314, 336 )
 
 [node name="GoldCoin" parent="." instance=ExtResource( 3 )]
 position = Vector2( 59, 142 )
@@ -39,8 +41,14 @@ position = Vector2( 497, 526 )
 [node name="CoinEffect" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3, -31 )
 
+[node name="TreasureEffect" parent="." instance=ExtResource( 11 )]
+position = Vector2( -13, -49 )
+
 [node name="KeyEffect" parent="." instance=ExtResource( 9 )]
 position = Vector2( 21, -30 )
 
 [node name="Key" parent="." instance=ExtResource( 8 )]
-position = Vector2( 227, 208 )
+position = Vector2( 387, 338 )
+
+[node name="Treasure" parent="." instance=ExtResource( 10 )]
+position = Vector2( 98, 107 )

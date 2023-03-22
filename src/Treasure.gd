@@ -5,8 +5,9 @@ onready var treasure_effect = preload("res://prefabs/TreasureEffect.tscn")
 var dx = 0
 var dy = 0
 
-const FRAC = 0.5
-const LIM = 10
+const FRAC_Y = 0.6
+const FRAC_X = 0.8
+const LIM = 8
 
 func _ready():
 	var treasures = ["red", "blue", "green"]
@@ -18,11 +19,12 @@ func _process(dt):
 	
 	if move_and_collide(Vector2(0, dy*dt)):
 		if abs(dy) > LIM:
-			dy *= -FRAC
+			dy *= -FRAC_Y
+			dx *= FRAC_X
 		else:
 			dy = 0
 	if move_and_collide(Vector2(dx*dt, 0)):
-		dx *= -FRAC
+		dx *= -FRAC_X
 
 
 func _on_Area2D_body_entered(body):

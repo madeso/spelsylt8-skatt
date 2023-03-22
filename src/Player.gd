@@ -23,6 +23,7 @@ var jump_buffer = -1
 var wall_timer = 0
 var alive = true
 var death_timer = 0
+var has_key = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +32,10 @@ func _ready():
 
 func collect_coin():
 	print("got some coin")
+
+func collect_key():
+	has_key = true
+	print("got some key")
 
 func kill():
 	if alive:

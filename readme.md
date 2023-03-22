@@ -15,7 +15,7 @@
 | 19 | - | 0h
 | 20 | - | 0h
 | 21 | added sprikes, gold pickup, and walking crab enemy that kills you | 3h
-| 22 | 
+| 22 | added chest, treasure and pickup effects | 1.5h
 | 23 | 
 | 24 | 
 | 25 | 

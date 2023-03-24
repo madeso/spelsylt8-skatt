@@ -32,3 +32,15 @@ func play_open_chest():
 onready var spawn_treasure_sfx := $"Sounds/SpawnTreasureSfx"
 func play_spawn_treasure():
 	spawn_treasure_sfx.play()
+
+onready var land_sfx := $"Sounds/LandSfx"
+func play_land():
+	land_sfx.play()
+
+onready var hardland_sfx := $"Sounds/HardLandSfx"
+func play_hardland():
+	hardland_sfx.play()
+
+onready var walk_sfx := $"Sounds/WalkSfx"
+func play_walk():
+	walk_sfx.play()

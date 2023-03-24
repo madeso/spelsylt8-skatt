@@ -14,6 +14,7 @@ const RUN_GROUND_ACC = 250
 const RUN_AIR_ACC = 100
 const GROUND_DEACC = 250
 const AIR_DEACC = 25
+const WALK_TIMER = 0.20
 
 var dx = 0
 var dy = 0
@@ -24,6 +25,7 @@ var wall_timer = 0
 var alive = true
 var death_timer = 0
 var has_key = false
+var walk_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -94,6 +96,12 @@ func _process(dt):
 		if air_timer < 0.1:
 			acc = RUN_GROUND_ACC
 		dx = clamp(dx + mx * dt * acc, -RUN_SPEED, RUN_SPEED)
+		
+		if air_timer < 0.1:
+			walk_timer += dt
+			if walk_timer > WALK_TIMER:
+				walk_timer -= WALK_TIMER
+				SoundPlayer.play_walk()
 	else:
 		var last_sign = sign(dx)
 		var deacc = AIR_DEACC
@@ -126,7 +134,6 @@ func _process(dt):
 			jump_timer = JUMP_TIMER
 			dy = -JUMP_POWER
 			jump_buffer = -1
-			print("jump")
 			SoundPlayer.play_jump()
 		elif wall_timer < 0.1 and moved:
 			# wall jump
@@ -146,6 +153,12 @@ func _process(dt):
 	
 	air_timer += dt
 	if move_and_collide(Vector2(0, dy * dt)):
+		if dy > 10:
+			print(dy)
+		if dy > 200:
+			SoundPlayer.play_hardland()
+		elif dy > 50:
+			SoundPlayer.play_land()
 		dy = 0
 		air_timer = 0
 		

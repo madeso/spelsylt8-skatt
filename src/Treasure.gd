@@ -33,4 +33,4 @@ func _on_Area2D_body_entered(body):
 		var effect = treasure_effect.instance()
 		effect.set_position(position)
 		get_parent().add_child(effect)
-		body.collect_coin()
+		body.collect_treasure()

@@ -32,10 +32,16 @@ func _ready():
 
 func collect_coin():
 	print("got some coin")
+	SoundPlayer.play_coin()
+
+func collect_treasure():
+	print("got some treasure")
+	SoundPlayer.play_treasure()
 
 func collect_key():
 	has_key = true
 	print("got some key")
+	SoundPlayer.play_collect_key()
 
 func kill():
 	if alive:
@@ -43,6 +49,7 @@ func kill():
 		alive = false
 		dy = -JUMP_POWER * 1.25
 		air_timer = 1
+		SoundPlayer.play_die()
 
 func update_dead(dt):
 	death_timer += dt
@@ -119,6 +126,8 @@ func _process(dt):
 			jump_timer = JUMP_TIMER
 			dy = -JUMP_POWER
 			jump_buffer = -1
+			print("jump")
+			SoundPlayer.play_jump()
 		elif wall_timer < 0.1 and moved:
 			# wall jump
 			wall_timer = 10.0
@@ -126,6 +135,7 @@ func _process(dt):
 			dx = -WALL_JUMP_HOR * mx
 			dy = -WALL_JUMP_POWER
 			jump_buffer = -1
+			SoundPlayer.play_walljump()
 	
 	if Input.is_action_pressed("ui_up") and jump_timer > 0.0:
 		dy = -JUMP_POWER

@@ -14,6 +14,10 @@ config/name="PiratSkatt"
 run/main_scene="res://level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundPlayer="*res://sfx/SoundPlayer.tscn"
+
 [display]
 
 window/size/width=320

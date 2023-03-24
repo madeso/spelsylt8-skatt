@@ -31,6 +31,7 @@ func _process(dt):
 	treasure.dx = rand_range(-DX, DX)
 	treasure.dy = rand_range(-DY_LO, -DY_HI)
 	get_parent().add_child(treasure)
+	SoundPlayer.play_spawn_treasure()
 	spawn_count -= 1
 
 func _on_Chest_body_entered(body):
@@ -38,6 +39,7 @@ func _on_Chest_body_entered(body):
 		if $Sprite.animation == "idle":
 			if body.has_key:
 				$Sprite.animation = "unlocked"
+				SoundPlayer.play_open_chest()
 
 
 func _on_Sprite_animation_finished():

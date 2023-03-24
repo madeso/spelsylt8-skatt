@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sfx/SoundPlayer.gd" type="Script" id=1]
+[ext_resource path="res://sfx/treasure.wav" type="AudioStream" id=2]
+[ext_resource path="res://sfx/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/coin.wav" type="AudioStream" id=4]
+[ext_resource path="res://sfx/die.wav" type="AudioStream" id=5]
+[ext_resource path="res://sfx/walljump.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/collect_key.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/open_chest.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/spawn_treasure.wav" type="AudioStream" id=9]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="CoinSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="DieSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )
+
+[node name="JumpSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 3 )
+
+[node name="TreasureSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 2 )
+
+[node name="WalljumpSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+
+[node name="OpenChestSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="CollectKeySfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="SpawnTreasureSfx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )

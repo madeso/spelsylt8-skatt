@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://CoinEffect.gd" type="Script" id=1]
+[ext_resource path="res://scripts/CoinEffect.gd" type="Script" id=1]
 [ext_resource path="res://assets/Pirate Treasure/Coin Effect/01.png" type="Texture" id=2]
 [ext_resource path="res://assets/Pirate Treasure/Coin Effect/02.png" type="Texture" id=3]
 [ext_resource path="res://assets/Pirate Treasure/Coin Effect/03.png" type="Texture" id=4]

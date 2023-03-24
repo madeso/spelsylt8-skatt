@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://KeyEffect.gd" type="Script" id=1]
+[ext_resource path="res://scripts/KeyEffect.gd" type="Script" id=1]
 [ext_resource path="res://assets/Merchant Ship/Chest Key/Effect/2.png" type="Texture" id=2]
 [ext_resource path="res://assets/Merchant Ship/Chest Key/Effect/3.png" type="Texture" id=3]
 [ext_resource path="res://assets/Merchant Ship/Chest Key/Effect/1.png" type="Texture" id=4]

@@ -37,7 +37,6 @@ func collect_coin():
 	SoundPlayer.play_coin()
 
 func collect_treasure():
-	print("got some treasure")
 	SoundPlayer.play_treasure()
 
 func collect_key():
@@ -153,8 +152,6 @@ func _process(dt):
 	
 	air_timer += dt
 	if move_and_collide(Vector2(0, dy * dt)):
-		if dy > 10:
-			print(dy)
 		if dy > 200:
 			SoundPlayer.play_hardland()
 		elif dy > 50:

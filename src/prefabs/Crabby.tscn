@@ -30,7 +30,7 @@
 [ext_resource path="res://assets/The Crusty Crew/Crabby/06-Anticipation/Anticipation 02.png" type="Texture" id=28]
 [ext_resource path="res://assets/The Crusty Crew/Crabby/02-Run/Run 04.png" type="Texture" id=29]
 [ext_resource path="res://assets/The Crusty Crew/Crabby/10-Dead Ground/Dead Ground 01.png" type="Texture" id=30]
-[ext_resource path="res://Crabby.gd" type="Script" id=31]
+[ext_resource path="res://scripts/Crabby.gd" type="Script" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

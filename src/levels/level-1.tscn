@@ -96,17 +96,20 @@ position = Vector2( 1120, 56 )
 [node name="GoldCoin8" parent="." index="29" instance=ExtResource( 4 )]
 position = Vector2( 1424, -16 )
 
-[node name="GoldCoin9" parent="." index="30" instance=ExtResource( 4 )]
+[node name="GoldCoin14" parent="." index="30" instance=ExtResource( 4 )]
+position = Vector2( 1424, -56 )
+
+[node name="GoldCoin9" parent="." index="31" instance=ExtResource( 4 )]
 position = Vector2( 1456, -112 )
 
-[node name="GoldCoin10" parent="." index="31" instance=ExtResource( 4 )]
+[node name="GoldCoin10" parent="." index="32" instance=ExtResource( 4 )]
 position = Vector2( 1360, -144 )
 
-[node name="GoldCoin11" parent="." index="32" instance=ExtResource( 4 )]
+[node name="GoldCoin11" parent="." index="33" instance=ExtResource( 4 )]
 position = Vector2( 1552, -80 )
 
-[node name="GoldCoin12" parent="." index="33" instance=ExtResource( 4 )]
+[node name="GoldCoin12" parent="." index="34" instance=ExtResource( 4 )]
 position = Vector2( 1616, -16 )
 
-[node name="GoldCoin13" parent="." index="34" instance=ExtResource( 4 )]
+[node name="GoldCoin13" parent="." index="35" instance=ExtResource( 4 )]
 position = Vector2( 1696, 16 )

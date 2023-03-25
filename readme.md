@@ -18,4 +18,4 @@
 | 22 | added chest, treasure and pickup effects | 1.5h
 | 23 | - | 0h
 | 24 | Added sounds and added 3 basic levels | 2h
-| 25 | 
+| 25 | Added chests to all levels, added a completion screen, added title and background parallax | 4h

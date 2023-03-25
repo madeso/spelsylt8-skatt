@@ -206,7 +206,7 @@ texture = ExtResource( 11 )
 [node name="Map" type="AnimatedSprite" parent="."]
 position = Vector2( -76, 92 )
 frames = SubResource( 2 )
-frame = 3
+frame = 10
 playing = true
 
 [node name="Skulls" type="Node2D" parent="."]
@@ -215,14 +215,13 @@ position = Vector2( 164, 64 )
 [node name="Skull" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( -116, 0 )
 frames = SubResource( 1 )
-frame = 4
 playing = true
 script = ExtResource( 35 )
 
 [node name="Skull2" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( 108, 0 )
 frames = SubResource( 1 )
-frame = 3
+frame = 7
 playing = true
 script = ExtResource( 35 )
 
@@ -235,19 +234,19 @@ playing = true
 [node name="Pirate" type="AnimatedSprite" parent="."]
 position = Vector2( 136, 148 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Light" type="AnimatedSprite" parent="."]
 position = Vector2( 84, 152 )
 frames = SubResource( 8 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Light2" type="AnimatedSprite" parent="."]
 position = Vector2( 208, 152 )
 frames = SubResource( 8 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="BouncingTreasure" parent="." instance=ExtResource( 27 )]

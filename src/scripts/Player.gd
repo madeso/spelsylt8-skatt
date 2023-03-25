@@ -65,10 +65,12 @@ func update_dead(dt):
 		air_timer = 0
 		
 	if death_timer > 0.25:
-		death_timer = 11
 		if Input.is_action_just_pressed("ui_accept"):
-			get_tree().reload_current_scene()
-			
+			death_timer = 500
+	
+	if death_timer > 5:
+		get_tree().reload_current_scene()
+	
 	
 	if air_timer < 0.1:
 		change_animation("dead_ground")

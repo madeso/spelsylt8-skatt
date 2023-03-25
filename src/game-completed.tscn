@@ -206,7 +206,7 @@ texture = ExtResource( 11 )
 [node name="Map" type="AnimatedSprite" parent="."]
 position = Vector2( -76, 92 )
 frames = SubResource( 2 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="Skulls" type="Node2D" parent="."]
@@ -215,25 +215,27 @@ position = Vector2( 164, 64 )
 [node name="Skull" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( -116, 0 )
 frames = SubResource( 1 )
-frame = 2
+frame = 4
 playing = true
 script = ExtResource( 35 )
 
 [node name="Skull2" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( 108, 0 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 35 )
 
 [node name="Red potion" type="AnimatedSprite" parent="."]
 position = Vector2( 40, 135 )
 frames = SubResource( 3 )
+frame = 5
 playing = true
 
 [node name="Pirate" type="AnimatedSprite" parent="."]
 position = Vector2( 136, 148 )
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="Light" type="AnimatedSprite" parent="."]

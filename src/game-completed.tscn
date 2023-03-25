@@ -1,0 +1,288 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://palm-tree-island-tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/19.png" type="Texture" id=2]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/6.png" type="Texture" id=3]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/15.png" type="Texture" id=4]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/9.png" type="Texture" id=5]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/20.png" type="Texture" id=7]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/18.png" type="Texture" id=8]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/25.png" type="Texture" id=9]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/16.png" type="Texture" id=10]
+[ext_resource path="res://assets/Merchant Ship/Chest/Unlocked/8.png" type="Texture" id=11]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/8.png" type="Texture" id=12]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/14.png" type="Texture" id=13]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/11.png" type="Texture" id=14]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/12.png" type="Texture" id=15]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/02.png" type="Texture" id=16]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/03.png" type="Texture" id=17]
+[ext_resource path="res://assets/Merchant Ship/Box/Idle/1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/08.png" type="Texture" id=19]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/06.png" type="Texture" id=20]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/05.png" type="Texture" id=21]
+[ext_resource path="res://assets/Wood and Paper UI/Big Text/7.png" type="Texture" id=22]
+[ext_resource path="res://assets/Merchant Ship/Barrel/Idle/1.png" type="Texture" id=23]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/07.png" type="Texture" id=24]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/01.png" type="Texture" id=25]
+[ext_resource path="res://assets/Pirate Treasure/Golden Skull/04.png" type="Texture" id=26]
+[ext_resource path="res://prefabs/BouncingTreasure.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/01.png" type="Texture" id=28]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/02.png" type="Texture" id=29]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/06.png" type="Texture" id=30]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/03.png" type="Texture" id=31]
+[ext_resource path="res://scripts/BouncingTreasure.gd" type="Script" id=32]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/04.png" type="Texture" id=33]
+[ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/05.png" type="Texture" id=34]
+[ext_resource path="res://scripts/Wiggle.gd" type="Script" id=35]
+[ext_resource path="res://scripts/game-completed.gd" type="Script" id=36]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/06.png" type="Texture" id=39]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" type="Texture" id=40]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/07.png" type="Texture" id=41]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/03.png" type="Texture" id=42]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" type="Texture" id=43]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/04.png" type="Texture" id=44]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/05.png" type="Texture" id=45]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" type="Texture" id=46]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" type="Texture" id=47]
+[ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" type="Texture" id=48]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/05.png" type="Texture" id=49]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/01.png" type="Texture" id=50]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/06.png" type="Texture" id=51]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/04.png" type="Texture" id=52]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/07.png" type="Texture" id=53]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/08.png" type="Texture" id=54]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/10.png" type="Texture" id=55]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/03.png" type="Texture" id=56]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/09.png" type="Texture" id=57]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/11.png" type="Texture" id=58]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/01.png" type="Texture" id=59]
+[ext_resource path="res://assets/Pirate Treasure/Red Potion/02.png" type="Texture" id=60]
+[ext_resource path="res://assets/Pirate Treasure/Big Map/Idle/02.png" type="Texture" id=61]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 50 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 57 ), ExtResource( 55 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 48 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 36 )
+
+[node name="Map" type="AnimatedSprite" parent="."]
+position = Vector2( 60, 112 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[node name="Thanks for playing" type="Node2D" parent="."]
+position = Vector2( 156, 76 )
+
+[node name="thanks" type="Node2D" parent="Thanks for playing"]
+position = Vector2( -56, 0 )
+
+[node name="20" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( -30, -5 )
+texture = ExtResource( 7 )
+
+[node name="1" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( -8, -5 )
+texture = ExtResource( 6 )
+
+[node name="8" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( -19, -5 )
+texture = ExtResource( 12 )
+
+[node name="14" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( 3, -5 )
+texture = ExtResource( 13 )
+
+[node name="11" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( 14, -5 )
+texture = ExtResource( 14 )
+
+[node name="19" type="Sprite" parent="Thanks for playing/thanks"]
+position = Vector2( 25, -5 )
+texture = ExtResource( 2 )
+
+[node name="for" type="Node2D" parent="Thanks for playing"]
+position = Vector2( -1, 0 )
+
+[node name="6" type="Sprite" parent="Thanks for playing/for"]
+position = Vector2( -11, -5 )
+texture = ExtResource( 3 )
+
+[node name="15" type="Sprite" parent="Thanks for playing/for"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 4 )
+
+[node name="18" type="Sprite" parent="Thanks for playing/for"]
+position = Vector2( 11, -5 )
+texture = ExtResource( 8 )
+
+[node name="playing" type="Node2D" parent="Thanks for playing"]
+position = Vector2( 55, 0 )
+
+[node name="12" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( -15, -5 )
+texture = ExtResource( 15 )
+
+[node name="16" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( -26, -5 )
+texture = ExtResource( 10 )
+
+[node name="2" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( -4, -5 )
+texture = ExtResource( 6 )
+
+[node name="25" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( 7, -5 )
+texture = ExtResource( 9 )
+
+[node name="9" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( 18, -5 )
+texture = ExtResource( 5 )
+
+[node name="17" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( 29, -5 )
+texture = ExtResource( 13 )
+
+[node name="7" type="Sprite" parent="Thanks for playing/playing"]
+position = Vector2( 40, -5 )
+texture = ExtResource( 22 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 1, -65535, 2, 1, -65534, 2, 1, -65533, 2, 1, -65532, 2, 1, -65531, 2, 1, -65530, 2, 1, -65529, 2, 1, -65528, 2, 1, -65527, 2, 1, -65526, 2, 2, 65535, 2, 65536, 0, 2, 6, 1, 2, 131073, 2, 2, 131073, 3, 2, 131073, 4, 2, 131073, 5, 2, 131073, 6, 2, 131073, 7, 2, 131073, 8, 2, 131073, 9, 2, 7, 10, 2, 65538, 131071, 2, 65536, 65536, 2, 65538, 65545, 2, 65536, 65546, 2, 65538, 196607, 2, 65536, 131072, 2, 65538, 131081, 2, 65536, 131082, 2, 65538, 262143, 2, 65536, 196608, 2, 65538, 196617, 2, 65536, 196618, 2, 65538, 327679, 2, 65536, 262144, 2, 65538, 262153, 2, 65536, 262154, 2, 65538, 393215, 2, 131072, 327680, 2, 65552, 327681, 2, 1, 327682, 2, 1, 327683, 2, 1, 327684, 2, 1, 327685, 2, 196617, 327686, 2, 262145, 327687, 2, 262145, 327688, 2, 262145, 327689, 2, 262154, 327690, 2, 131074, 393216, 2, 131072, 393217, 2, 131073, 393218, 2, 131073, 393219, 2, 131073, 393220, 2, 131073, 393221, 2, 131074 )
+
+[node name="2" type="Sprite" parent="."]
+position = Vector2( 65, 148 )
+texture = ExtResource( 23 )
+
+[node name="1" type="Sprite" parent="."]
+position = Vector2( 46, 150 )
+texture = ExtResource( 18 )
+
+[node name="8" type="Sprite" parent="."]
+position = Vector2( 250, 145 )
+texture = ExtResource( 11 )
+
+[node name="Skulls" type="Node2D" parent="."]
+position = Vector2( 164, 64 )
+
+[node name="Skull" type="AnimatedSprite" parent="Skulls"]
+position = Vector2( -116, 0 )
+frames = SubResource( 1 )
+frame = 4
+playing = true
+script = ExtResource( 35 )
+
+[node name="Skull2" type="AnimatedSprite" parent="Skulls"]
+position = Vector2( 108, 0 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+script = ExtResource( 35 )
+
+[node name="Red potion" type="AnimatedSprite" parent="."]
+position = Vector2( 40, 132 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="Pirate" type="AnimatedSprite" parent="."]
+position = Vector2( 136, 148 )
+frames = SubResource( 7 )
+frame = 4
+playing = true
+
+[node name="Light" type="AnimatedSprite" parent="."]
+position = Vector2( 84, 152 )
+frames = SubResource( 8 )
+playing = true
+
+[node name="Light2" type="AnimatedSprite" parent="."]
+position = Vector2( 208, 152 )
+frames = SubResource( 8 )
+frame = 5
+playing = true
+
+[node name="BouncingTreasure" parent="." instance=ExtResource( 27 )]
+position = Vector2( 178, 139 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure2" parent="." instance=ExtResource( 27 )]
+position = Vector2( 204, 129 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure3" parent="." instance=ExtResource( 27 )]
+position = Vector2( 160, 124 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure4" parent="." instance=ExtResource( 27 )]
+position = Vector2( 112, 139 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure5" parent="." instance=ExtResource( 27 )]
+position = Vector2( 124, 116 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure6" parent="." instance=ExtResource( 27 )]
+position = Vector2( 164, 144 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure7" parent="." instance=ExtResource( 27 )]
+position = Vector2( 184, 124 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure8" parent="." instance=ExtResource( 27 )]
+position = Vector2( 184, 151 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure9" parent="." instance=ExtResource( 27 )]
+position = Vector2( 220, 139 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure10" parent="." instance=ExtResource( 27 )]
+position = Vector2( 234, 127 )
+script = ExtResource( 32 )
+
+[node name="BouncingTreasure11" parent="." instance=ExtResource( 27 )]
+position = Vector2( 234, 127 )
+script = ExtResource( 32 )

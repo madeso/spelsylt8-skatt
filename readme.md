@@ -1,8 +1,8 @@
 # Spelsylt 8 - skatt
 
-## Dagbok
+## Daily log
 
-| Dag | Vad | Tid 
+| Day | What | Time 
 | - | - | -
 | 11 | - | 0h
 | 12 | - | 0h

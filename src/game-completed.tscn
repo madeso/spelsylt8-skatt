@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://palm-tree-island-tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/Wood and Paper UI/Big Text/19.png" type="Texture" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://assets/Pirate Ship/Decorations/Candle/Candle/05.png" type="Texture" id=34]
 [ext_resource path="res://scripts/Wiggle.gd" type="Script" id=35]
 [ext_resource path="res://scripts/game-completed.gd" type="Script" id=36]
+[ext_resource path="res://prefabs/BgImage.tscn" type="PackedScene" id=37]
+[ext_resource path="res://assets/Palm Tree Island/Background/Big Clouds.png" type="Texture" id=38]
 [ext_resource path="res://assets/Pirate Treasure/Red Potion/06.png" type="Texture" id=39]
 [ext_resource path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" type="Texture" id=40]
 [ext_resource path="res://assets/Pirate Treasure/Red Potion/07.png" type="Texture" id=41]
@@ -102,12 +104,6 @@ animations = [ {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 36 )
-
-[node name="Map" type="AnimatedSprite" parent="."]
-position = Vector2( 60, 112 )
-frames = SubResource( 2 )
-frame = 3
-playing = true
 
 [node name="Thanks for playing" type="Node2D" parent="."]
 position = Vector2( 156, 76 )
@@ -196,12 +192,22 @@ position = Vector2( 65, 148 )
 texture = ExtResource( 23 )
 
 [node name="1" type="Sprite" parent="."]
-position = Vector2( 46, 150 )
+position = Vector2( 46, 152 )
 texture = ExtResource( 18 )
 
 [node name="8" type="Sprite" parent="."]
-position = Vector2( 250, 145 )
+position = Vector2( 239, 145 )
 texture = ExtResource( 11 )
+
+[node name="9" type="Sprite" parent="."]
+position = Vector2( 272, 145 )
+texture = ExtResource( 11 )
+
+[node name="Map" type="AnimatedSprite" parent="."]
+position = Vector2( -76, 92 )
+frames = SubResource( 2 )
+frame = 5
+playing = true
 
 [node name="Skulls" type="Node2D" parent="."]
 position = Vector2( 164, 64 )
@@ -209,38 +215,37 @@ position = Vector2( 164, 64 )
 [node name="Skull" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( -116, 0 )
 frames = SubResource( 1 )
-frame = 4
+frame = 2
 playing = true
 script = ExtResource( 35 )
 
 [node name="Skull2" type="AnimatedSprite" parent="Skulls"]
 position = Vector2( 108, 0 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 35 )
 
 [node name="Red potion" type="AnimatedSprite" parent="."]
-position = Vector2( 40, 132 )
+position = Vector2( 40, 135 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Pirate" type="AnimatedSprite" parent="."]
 position = Vector2( 136, 148 )
 frames = SubResource( 7 )
-frame = 4
 playing = true
 
 [node name="Light" type="AnimatedSprite" parent="."]
 position = Vector2( 84, 152 )
 frames = SubResource( 8 )
+frame = 4
 playing = true
 
 [node name="Light2" type="AnimatedSprite" parent="."]
 position = Vector2( 208, 152 )
 frames = SubResource( 8 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="BouncingTreasure" parent="." instance=ExtResource( 27 )]
@@ -286,3 +291,11 @@ script = ExtResource( 32 )
 [node name="BouncingTreasure11" parent="." instance=ExtResource( 27 )]
 position = Vector2( 234, 127 )
 script = ExtResource( 32 )
+
+[node name="BgImage" parent="." instance=ExtResource( 37 )]
+position = Vector2( 172, 96 )
+
+[node name="BigClouds" type="Sprite" parent="."]
+position = Vector2( 196, 68 )
+z_index = -2
+texture = ExtResource( 38 )

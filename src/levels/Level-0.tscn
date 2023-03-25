@@ -83,7 +83,7 @@ playing = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ship" index="0"]
 position = Vector2( 4, -36 )
 frames = SubResource( 3 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Water" type="Node2D" parent="." index="2"]
@@ -96,7 +96,7 @@ texture = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Water" index="1"]
 position = Vector2( 0, -16 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="2" type="Sprite" parent="Water" index="2"]
@@ -106,7 +106,7 @@ texture = ExtResource( 8 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Water" index="3"]
 position = Vector2( -96, -16 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="3" type="Sprite" parent="Water" index="4"]
@@ -116,7 +116,7 @@ texture = ExtResource( 8 )
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Water" index="5"]
 position = Vector2( -192, -16 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="4" type="Sprite" parent="Water" index="6"]
@@ -142,7 +142,6 @@ texture = ExtResource( 8 )
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Water" index="11"]
 position = Vector2( -288, -16 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="TileMap" parent="." index="3"]

@@ -52,6 +52,9 @@ func kill():
 		air_timer = 1
 		SoundPlayer.play_die()
 
+func move_cloud(cloud, move, factor):
+	cloud.position = Vector2(cloud.position.x - move * factor * 0.3, cloud.position.y)
+
 func update_dead(dt):
 	death_timer += dt
 	dy = dy + GRAVITY * dt
@@ -77,6 +80,12 @@ func _process(dt):
 	if alive == false:
 		update_dead(dt)
 		return
+	
+	# paralax background hack
+	var cy = min(max(-300, position.y), 300) / 600
+	# print(cy)
+	$Camera/BgImage.position = Vector2(0, cy * -180)
+	
 	# ---------------------------------------------------------------------------------------------
 	# horizontal movmeent
 	var mx = 0
@@ -111,11 +120,17 @@ func _process(dt):
 			dx = 0
 	if wall_timer < 10:
 		wall_timer += dt
+	var lastx = position.x
 	if move_and_collide(Vector2(dx * dt, 0)):
 		dx = 0
 		moved = false
 		wall_timer = 0
 	
+	# hack for paralax clouds
+	var actualmove = position.x - lastx
+	move_cloud($Camera/Clouds/clouds1, actualmove, 1.0)
+	move_cloud($Camera/Clouds/clouds2, actualmove, 1.5)
+	move_cloud($Camera/Clouds/clouds3, actualmove, 1.3)
 	
 	# ---------------------------------------------------------------------------------------------
 	# vertical movment

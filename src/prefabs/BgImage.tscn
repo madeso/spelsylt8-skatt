@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Palm Tree Island/Background/Water Reflect Big 04.png" type="Texture" id=1]
+[ext_resource path="res://assets/Palm Tree Island/Background/Additional Water.png" type="Texture" id=2]
+[ext_resource path="res://assets/Palm Tree Island/Background/Additional Sky.png" type="Texture" id=3]
+[ext_resource path="res://assets/Palm Tree Island/Background/Water Reflect Big 02.png" type="Texture" id=4]
+[ext_resource path="res://assets/Palm Tree Island/Background/Water Reflect Big 03.png" type="Texture" id=5]
+[ext_resource path="res://assets/Palm Tree Island/Background/BG Image.png" type="Texture" id=6]
+[ext_resource path="res://assets/Palm Tree Island/Background/Water Reflect Big 01.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="BgImage" type="Sprite"]
+position = Vector2( 0, -8 )
+z_index = -20
+texture = ExtResource( 6 )
+
+[node name="AdditionalSky" type="Sprite" parent="."]
+position = Vector2( 0, -128 )
+scale = Vector2( 12, 4 )
+texture = ExtResource( 3 )
+
+[node name="AdditionalWater" type="Sprite" parent="."]
+position = Vector2( 0, 128 )
+scale = Vector2( 12, 4 )
+texture = ExtResource( 2 )
+
+[node name="WaterReflection" type="AnimatedSprite" parent="."]
+position = Vector2( -8, 28 )
+frames = SubResource( 3 )
+frame = 2
+playing = true

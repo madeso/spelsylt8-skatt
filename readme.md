@@ -1,4 +1,9 @@
-# Spelsylt 8 - skatt
+# Spelsylt 8 - Piratskatten
+
+As a pirate, find treasures in a hostile world.
+
+![piratskatten title screen showing "madeo presents piratskatten" a pirate ship has reached the shore and the pirate is ready for adventure, a gold coin on the edge of the screen to the right is encouring but not enough](piratskatten-title.png)
+
 
 ## Daily log
 
